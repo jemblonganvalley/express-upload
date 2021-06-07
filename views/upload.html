@@ -1,0 +1,43 @@
+<main class="upload container-flex-center">
+  <div id="image_area"></div>
+  <form
+    action="/api/upload"
+    class="form-upload"
+    enctype="multipart/form-data"
+    method="POST"
+  >
+    <div class="form-group">
+      <label for="filename">filename</label>
+      <input type="text" id="filename" name="filename" />
+    </div>
+
+    <div class="form-group">
+      <label for="photos">photos</label>
+      <input
+        type="file"
+        id="photos"
+        name="photos"
+        onchange="viewImage(event)"
+      />
+    </div>
+
+    <button type="submit">upload</button>
+  </form>
+</main>
+
+<script>
+  const viewImage = (event) => {
+    let reader = new FileReader();
+    const file = event.target.files;
+    let area = document.getElementById("image_area");
+
+    reader.onload = (e) => {
+      area.innerHTML = `
+      <img src="${e.target.result}" alt="check file" id="img" width="300px" />
+      `;
+      // console.log(e.target.result);
+    };
+
+    reader.readAsDataURL(file[0]); // convert to base64 string
+  };
+</script>

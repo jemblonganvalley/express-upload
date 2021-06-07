@@ -1,0 +1,27 @@
+.navbar {
+  width: 100vw;
+  height: 70px;
+  display: flex;
+  padding: 0 60px;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: rgb(189, 0, 0);
+  color: white;
+  position: sticky;
+  top: 0;
+  left: 0;
+  user-select: none;
+}
+
+.brand {
+  text-transform: uppercase;
+}
+
+.menu {
+  display: flex;
+  list-style-type: none;
+  gap: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin-left: auto;
+}
